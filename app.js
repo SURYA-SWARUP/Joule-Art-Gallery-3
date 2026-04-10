@@ -13,7 +13,7 @@
    PAINTINGS DATA
    CHANGE #11: sorted low-to-high by price within each group
    ──────────────────────────────────────────────────────────── */
-const BASE = 'https://sambhav-khandelwal.github.io/-SURYA-WD-F2/assets/images/';
+const BASE = 'https://surya-swarup.github.io/Joule-Art-Gallery-3/assets/images/';
 
 const PAINTINGS = [
 
