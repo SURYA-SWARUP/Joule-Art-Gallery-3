@@ -1,17 +1,16 @@
 /* ============================================================
    JOULE WALL ART — app.js
-   Changes applied:
-   #4  Filter bar not sticky
-   #7  Header search drives collection filter
-   #11 Default sort: price low-to-high within each category
-   #12-14 Nav smooth scroll, Home link, correct order
+   Fixed:
+   - Rewrote PAINTINGS image references to match the actual files
+     present in /assets/images in the GitHub repo.
+   - Kept your filter/search/sort/modal/nav logic intact.
    ============================================================ */
 
 'use strict';
 
 /* ────────────────────────────────────────────────────────────
    PAINTINGS DATA
-   CHANGE #11: sorted low-to-high by price within each group
+   Sorted low-to-high by price within each group
    ──────────────────────────────────────────────────────────── */
 const BASE = 'https://surya-swarup.github.io/Joule-Art-Gallery-3/assets/images/';
 
@@ -19,106 +18,106 @@ const PAINTINGS = [
 
   /* ── SMALL WALL ─────────────────────────────────────────── */
   {
-    id: 's01', title: 'Serene Buddha Minimal Wall Painting',
-    category: 'Small', theme: 'Buddha', price: 1499, featured: true,
-    img: BASE + 'Serene Buddha Minimal Wall Painting.jpg',
+    id: 's01', title: 'Horse Line Art Minimal Wall Painting',
+    category: 'Small', theme: 'Horses', price: 1499, featured: true,
+    img: BASE + 'Horse Line Art Minimal Wall Painting.jpg',
   },
   {
-    id: 's02', title: 'Meditating Buddha Pastel Wall Painting',
-    category: 'Small', theme: 'Buddha', price: 1549, featured: false,
-    img: BASE + 'Meditating Buddha Pastel Wall Painting.jpg',
+    id: 's02', title: 'Blue Buddha Window View Wall Painting',
+    category: 'Small', theme: 'Buddha', price: 1549, featured: true,
+    img: BASE + 'Blue Buddha Window View Wall Painting.jpg',
   },
   {
-    id: 's03', title: 'Golden Lotus Spiritual Wall Painting',
-    category: 'Small', theme: 'Spiritual', price: 1549, featured: false,
-    img: BASE + 'Golden Lotus Spiritual Wall Painting.jpg',
+    id: 's03', title: 'Floral Arch Cloudscape Wall Painting',
+    category: 'Small', theme: 'Landscape', price: 1549, featured: false,
+    img: BASE + 'Floral Arch Cloudscape Wall Painting.jpg',
   },
   {
-    id: 's04', title: 'Abstract Indigo Brushstroke Wall Painting',
-    category: 'Small', theme: 'Abstract', price: 1599, featured: false,
-    img: BASE + 'Abstract Indigo Brushstroke Wall Painting.jpg',
-  },
-  {
-    id: 's05', title: 'Botanical Sage Green Wall Painting',
+    id: 's04', title: 'Sunset River Landscape Wall Painting',
     category: 'Small', theme: 'Landscape', price: 1599, featured: false,
-    img: BASE + 'Botanical Sage Green Wall Painting.jpg',
+    img: BASE + 'Sunset River Landscape Wall Painting.jpg',
   },
   {
-    id: 's06', title: 'Radha Krishna Miniature Wall Painting',
-    category: 'Small', theme: 'Spiritual', price: 1649, featured: false,
-    img: BASE + 'Radha Krishna Miniature Wall Painting.jpg',
+    id: 's05', title: 'Side Profile Buddha Portrait Wall Painting',
+    category: 'Small', theme: 'Buddha', price: 1599, featured: false,
+    img: BASE + 'Side Profile Buddha Portrait Wall Painting.jpg',
   },
   {
-    id: 's07', title: 'Misty Mountain Landscape Wall Painting',
-    category: 'Small', theme: 'Landscape', price: 1649, featured: false,
-    img: BASE + 'Misty Mountain Landscape Wall Painting.jpg',
+    id: 's06', title: 'Collage Woman in Wide Hat Wall Painting',
+    category: 'Small', theme: 'Portrait', price: 1649, featured: false,
+    img: BASE + 'Collage Woman in Wide Hat Wall Painting.jpg',
   },
   {
-    id: 's08', title: 'Moonlit Deer Forest Wall Painting',
-    category: 'Small', theme: 'Wildlife', price: 1699, featured: false,
-    img: BASE + 'Moonlit Deer Forest Wall Painting.jpg',
+    id: 's07', title: 'Golden Buddha Textured Wall Painting',
+    category: 'Small', theme: 'Buddha', price: 1649, featured: false,
+    img: BASE + 'Golden Buddha Textured Wall Painting.jpg',
   },
   {
-    id: 's09', title: 'Floral Crimson Abstract Wall Painting',
+    id: 's08', title: 'Abstract Tree Tunnel Path Wall Painting',
     category: 'Small', theme: 'Abstract', price: 1699, featured: false,
-    img: BASE + 'Floral Crimson Abstract Wall Painting.jpg',
+    img: BASE + 'Abstract Tree Tunnel Path Wall Painting.jpg',
   },
   {
-    id: 's10', title: 'Modern Woman Portrait Wall Painting',
-    category: 'Small', theme: 'Portrait', price: 1699, featured: false,
-    img: BASE + 'Modern Woman Portrait Wall Painting.jpg',
+    id: 's09', title: 'Folk Art Radha Krishna Portrait Wall Painting',
+    category: 'Small', theme: 'Spiritual', price: 1699, featured: false,
+    img: BASE + 'Folk Art Radha Krishna Portrait Wall Painting.jpg',
+  },
+  {
+    id: 's10', title: 'Pink Urban Cityscape Wall Painting',
+    category: 'Small', theme: 'Landscape', price: 1699, featured: false,
+    img: BASE + 'Pink Urban Cityscape Wall Painting.jpg',
   },
 
   /* ── OFFICE WALL ─────────────────────────────────────────── */
   {
-    id: 'o01', title: 'Buddha Calm Gaze Office Wall Painting',
+    id: 'o01', title: 'Buddha Mandala Traditional Wall Painting',
     category: 'Office Wall', theme: 'Buddha', price: 1799, featured: true,
-    img: BASE + 'Buddha Calm Gaze Office Wall Painting.jpg',
+    img: BASE + 'Buddha Mandala Traditional Wall Painting.jpg',
   },
   {
-    id: 'o02', title: 'Seven White Horses Running Wall Painting',
+    id: 'o02', title: 'Golden Seven Running Horses Wall Painting',
     category: 'Office Wall', theme: 'Horses', price: 1799, featured: true,
-    img: BASE + 'Seven White Horses Running Wall Painting.jpg',
+    img: BASE + 'Golden Seven Running Horses Wall Painting.jpg',
   },
   {
-    id: 'o03', title: 'Ganesh Gold Premium Office Wall Painting',
+    id: 'o03', title: 'Geometric Krishna Flute Wall Painting',
     category: 'Office Wall', theme: 'Spiritual', price: 1799, featured: false,
-    img: BASE + 'Ganesh Gold Premium Office Wall Painting.jpg',
+    img: BASE + 'Geometric Krishna Flute Wall Painting.jpg',
   },
   {
-    id: 'o04', title: 'Dark Forest Landscape Office Wall Painting',
-    category: 'Office Wall', theme: 'Landscape', price: 1849, featured: false,
-    img: BASE + 'Dark Forest Landscape Office Wall Painting.jpg',
-  },
-  {
-    id: 'o05', title: 'Modern Abstract Teal Office Wall Painting',
-    category: 'Office Wall', theme: 'Abstract', price: 1849, featured: false,
-    img: BASE + 'Modern Abstract Teal Office Wall Painting.jpg',
-  },
-  {
-    id: 'o06', title: 'Vintage Indian Portrait Office Wall Painting',
+    id: 'o04', title: 'Colorful Geometric Female Portrait Wall Painting',
     category: 'Office Wall', theme: 'Portrait', price: 1849, featured: false,
-    img: BASE + 'Vintage Indian Portrait Office Wall Painting.jpg',
+    img: BASE + 'Colorful Geometric Female Portrait Wall Painting.jpg',
   },
   {
-    id: 'o07', title: 'Geometric Gold Lines Office Wall Painting',
-    category: 'Office Wall', theme: 'Abstract', price: 1849, featured: false,
-    img: BASE + 'Geometric Gold Lines Office Wall Painting.jpg',
+    id: 'o05', title: 'Tree of Life Golden Texture Wall Painting',
+    category: 'Office Wall', theme: 'Spiritual', price: 1849, featured: false,
+    img: BASE + 'Tree of Life Golden Texture Wall Painting.jpg',
   },
   {
-    id: 'o08', title: 'Sunrise Over Valley Office Wall Painting',
-    category: 'Office Wall', theme: 'Landscape', price: 1899, featured: false,
-    img: BASE + 'Sunrise Over Valley Office Wall Painting.jpg',
+    id: 'o06', title: 'Vintage Woman Portrait Framed Wall Painting',
+    category: 'Office Wall', theme: 'Portrait', price: 1849, featured: false,
+    img: BASE + 'Vintage Woman Portrait Framed Wall Painting.jpg',
   },
   {
-    id: 'o09', title: 'Royal Tiger Majestic Office Wall Painting',
-    category: 'Office Wall', theme: 'Wildlife', price: 1899, featured: false,
-    img: BASE + 'Royal Tiger Majestic Office Wall Painting.jpg',
+    id: 'o07', title: 'Japanese Pagoda Red Sky Wall Painting',
+    category: 'Office Wall', theme: 'Landscape', price: 1849, featured: false,
+    img: BASE + 'Japanese Pagoda Red Sky Wall Painting.jpg',
   },
   {
-    id: 'o10', title: 'Calligraphy Wisdom Office Wall Painting',
+    id: 'o08', title: 'Golden White Horse Portrait Wall Painting',
+    category: 'Office Wall', theme: 'Horses', price: 1899, featured: false,
+    img: BASE + 'Golden White Horse Portrait Wall Painting.jpg',
+  },
+  {
+    id: 'o09', title: 'Krishna Flute Floral Portrait Wall Painting',
     category: 'Office Wall', theme: 'Spiritual', price: 1899, featured: false,
-    img: BASE + 'Calligraphy Wisdom Office Wall Painting.jpg',
+    img: BASE + 'Krishna Flute Floral Portrait Wall Painting.jpg',
+  },
+  {
+    id: 'o10', title: 'Red Eye Abstract Dark Wall Painting',
+    category: 'Office Wall', theme: 'Abstract', price: 1899, featured: false,
+    img: BASE + 'Red Eye Abstract Dark Wall Painting.jpg',
   },
 
   /* ── STATEMENT WALL ──────────────────────────────────────── */
@@ -133,44 +132,44 @@ const PAINTINGS = [
     img: BASE + 'White Running Horses Panoramic Wall Painting.jpg',
   },
   {
-    id: 'w03', title: 'Cosmic Shiva Statement Wall Painting',
-    category: 'Statement Wall', theme: 'Spiritual', price: 1999, featured: false,
-    img: BASE + 'Cosmic Shiva Statement Wall Painting.jpg',
+    id: 'w03', title: 'Lotus Buddha Floral Horizontal Wall Painting',
+    category: 'Statement Wall', theme: 'Buddha', price: 1999, featured: false,
+    img: BASE + 'Lotus Buddha Floral Horizontal Wall Painting.jpg',
   },
   {
-    id: 'w04', title: 'Grand Buddha Enlightenment Wall Painting',
-    category: 'Statement Wall', theme: 'Buddha', price: 2099, featured: false,
-    img: BASE + 'Grand Buddha Enlightenment Wall Painting.jpg',
+    id: 'w04', title: 'Radha Krishna Moonlight Tree Multi Panel Wall Painting',
+    category: 'Statement Wall', theme: 'Spiritual', price: 2099, featured: false,
+    img: BASE + 'Radha Krishna Moonlight Tree Multi Panel Wall Painting.jpg',
   },
   {
-    id: 'w05', title: 'Pride of Lions Statement Wall Painting',
-    category: 'Statement Wall', theme: 'Wildlife', price: 2099, featured: false,
-    img: BASE + 'Pride of Lions Statement Wall Painting.jpg',
+    id: 'w05', title: 'Black and White Running Horses Abstract Wall Painting',
+    category: 'Statement Wall', theme: 'Horses', price: 2099, featured: false,
+    img: BASE + 'Black and White Running Horses Abstract Wall Painting.jpg',
   },
   {
-    id: 'w06', title: 'Abstract Ocean Panoramic Wall Painting',
-    category: 'Statement Wall', theme: 'Abstract', price: 2099, featured: false,
-    img: BASE + 'Abstract Ocean Panoramic Wall Painting.jpg',
+    id: 'w06', title: 'Graffiti Pop Art Female Portrait Wall Painting',
+    category: 'Statement Wall', theme: 'Portrait', price: 2099, featured: false,
+    img: BASE + 'Graffiti Pop Art Female Portrait Wall Painting.jpg',
   },
   {
-    id: 'w07', title: 'Highland Stallion Galloping Wall Painting',
-    category: 'Statement Wall', theme: 'Horses', price: 2199, featured: false,
-    img: BASE + 'Highland Stallion Galloping Wall Painting.jpg',
+    id: 'w07', title: 'Surreal Red Moon Cityscape Wall Painting',
+    category: 'Statement Wall', theme: 'Landscape', price: 2199, featured: false,
+    img: BASE + 'Surreal Red Moon Cityscape Wall Painting.jpg',
   },
   {
-    id: 'w08', title: 'Eternal Krishna Panoramic Wall Painting',
-    category: 'Statement Wall', theme: 'Spiritual', price: 2199, featured: false,
-    img: BASE + 'Eternal Krishna Panoramic Wall Painting.jpg',
+    id: 'w08', title: 'Abstract Fashion Lady in Hat Wall Painting',
+    category: 'Statement Wall', theme: 'Portrait', price: 2199, featured: false,
+    img: BASE + 'Abstract Fashion Lady in Hat Wall Painting.jpg',
   },
   {
-    id: 'w09', title: 'Mountain Majesty Landscape Wall Painting',
-    category: 'Statement Wall', theme: 'Landscape', price: 2299, featured: false,
-    img: BASE + 'Mountain Majesty Landscape Wall Painting.jpg',
+    id: 'w09', title: 'Colorful Abstract Horses Wall Painting',
+    category: 'Statement Wall', theme: 'Horses', price: 2299, featured: false,
+    img: BASE + 'Colorful Abstract Horses Wall Painting.jpg',
   },
   {
-    id: 'w10', title: 'Regal Bengal Tiger Statement Wall Painting',
-    category: 'Statement Wall', theme: 'Wildlife', price: 2499, featured: false,
-    img: BASE + 'Regal Bengal Tiger Statement Wall Painting.jpg',
+    id: 'w10', title: 'Gothic Cathedral Yellow Moon Wall Painting',
+    category: 'Statement Wall', theme: 'Landscape', price: 2499, featured: false,
+    img: BASE + 'Gothic Cathedral Yellow Moon Wall Painting.jpg',
   },
 ];
 
@@ -180,12 +179,12 @@ const PAINTINGS = [
 let state = {
   category: '',
   theme:    '',
-  sort:     'price-asc',   // CHANGE #11: default = price low-to-high
+  sort:     'price-asc',
   search:   '',
 };
 
 /* ────────────────────────────────────────────────────────────
-   SMOOTH SCROLL UTILITY — CHANGE #12–14
+   SMOOTH SCROLL UTILITY
    ──────────────────────────────────────────────────────────── */
 function smoothScrollTo(sectionId) {
   const el = document.getElementById(sectionId);
@@ -195,11 +194,10 @@ function smoothScrollTo(sectionId) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
-// Expose globally for onclick attributes in HTML
 window.smoothScrollTo = smoothScrollTo;
 
 /* ────────────────────────────────────────────────────────────
-   FILTER BY CATEGORY (called from size-card buttons)
+   FILTER BY CATEGORY
    ──────────────────────────────────────────────────────────── */
 function filterByCategory(cat) {
   state.category = cat;
@@ -211,7 +209,6 @@ window.filterByCategory = filterByCategory;
 
 /* ────────────────────────────────────────────────────────────
    FILTER + SORT LOGIC
-   CHANGE #11: within each group, sort by price low-to-high as default
    ──────────────────────────────────────────────────────────── */
 function getFilteredSorted() {
   let list = PAINTINGS.filter(p => {
@@ -224,7 +221,6 @@ function getFilteredSorted() {
     return matchCat && matchTheme && matchSearch;
   });
 
-  // Sort
   switch (state.sort) {
     case 'price-asc':
       list.sort((a, b) => a.price - b.price);
@@ -236,7 +232,6 @@ function getFilteredSorted() {
       list.sort((a, b) => a.title.localeCompare(b.title));
       break;
     case 'featured':
-      // Featured first, then price asc within each group
       list.sort((a, b) => {
         if (b.featured !== a.featured) return b.featured - a.featured;
         return a.price - b.price;
@@ -289,9 +284,8 @@ function renderGrid() {
     grid.appendChild(card);
   });
 
-  // Card click → modal
   grid.querySelectorAll('.painting-card, .painting-card-btn').forEach(el => {
-    el.addEventListener('click', (e) => {
+    el.addEventListener('click', () => {
       const id = el.dataset.id || el.closest('.painting-card')?.dataset.id;
       if (id) openModal(id);
     });
@@ -302,15 +296,14 @@ function renderGrid() {
    SYNC UI CONTROLS → STATE
    ──────────────────────────────────────────────────────────── */
 function syncFiltersToState() {
-  const catEl  = document.getElementById('filter-category');
-  const themeEl= document.getElementById('filter-theme');
-  const sortEl = document.getElementById('filter-sort');
+  const catEl   = document.getElementById('filter-category');
+  const themeEl = document.getElementById('filter-theme');
+  const sortEl  = document.getElementById('filter-sort');
 
-  if (catEl  && catEl.value  !== undefined) catEl.value  = state.category;
-  if (themeEl&& themeEl.value!== undefined) themeEl.value= state.theme;
+  if (catEl && catEl.value !== undefined) catEl.value = state.category;
+  if (themeEl && themeEl.value !== undefined) themeEl.value = state.theme;
   if (sortEl && sortEl.value !== undefined) sortEl.value = state.sort;
 
-  // Sync cat tabs
   document.querySelectorAll('.cat-tab').forEach(tab => {
     tab.classList.toggle('active', tab.dataset.cat === state.category);
   });
@@ -324,10 +317,10 @@ function openModal(id) {
   if (!p) return;
 
   const overlay = document.getElementById('modal-overlay');
-  document.getElementById('modal-img').src   = p.img;
-  document.getElementById('modal-img').alt   = p.title;
+  document.getElementById('modal-img').src = p.img;
+  document.getElementById('modal-img').alt = p.title;
   document.getElementById('modal-title').textContent = p.title;
-  document.getElementById('modal-meta').textContent  =
+  document.getElementById('modal-meta').textContent =
     `Recommended fit: ${p.category}  ·  Theme: ${p.theme}`;
   document.getElementById('modal-price').textContent = `₹${p.price.toLocaleString('en-IN')}`;
 
@@ -346,13 +339,12 @@ function closeModal() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   NAV — CHANGE #12–14
+   NAV
    ──────────────────────────────────────────────────────────── */
 function initNav() {
   const hamburger = document.getElementById('hamburger');
-  const nav       = document.getElementById('main-nav');
+  const nav = document.getElementById('main-nav');
 
-  // Hamburger toggle
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
@@ -361,7 +353,6 @@ function initNav() {
     });
   }
 
-  // Close nav on any nav link click (mobile)
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       nav?.classList.remove('open');
@@ -370,7 +361,6 @@ function initNav() {
     });
   });
 
-  // Active nav highlighting on scroll
   const sections = ['hero', 'categories', 'collection', 'about', 'contact'];
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -390,7 +380,6 @@ function initNav() {
     if (el) observer.observe(el);
   });
 
-  // CHANGE #12–14: ensure all hash links scroll smoothly
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       const target = link.getAttribute('href').replace('#', '');
@@ -407,8 +396,7 @@ function initNav() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   HEADER SEARCH — CHANGE #7
-   Drives collection filter; search bar ONLY in header
+   HEADER SEARCH
    ──────────────────────────────────────────────────────────── */
 function initHeaderSearch() {
   const input = document.getElementById('header-search-input');
@@ -423,7 +411,6 @@ function initHeaderSearch() {
     }, 280);
   });
 
-  // Enter key → scroll to collection
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       state.search = input.value.trim();
@@ -437,10 +424,10 @@ function initHeaderSearch() {
    FILTER CONTROLS
    ──────────────────────────────────────────────────────────── */
 function initFilters() {
-  const catEl   = document.getElementById('filter-category');
+  const catEl = document.getElementById('filter-category');
   const themeEl = document.getElementById('filter-theme');
-  const sortEl  = document.getElementById('filter-sort');
-  const clearBtn= document.getElementById('clear-filters');
+  const sortEl = document.getElementById('filter-sort');
+  const clearBtn = document.getElementById('clear-filters');
 
   if (catEl) catEl.addEventListener('change', () => {
     state.category = catEl.value;
@@ -464,7 +451,6 @@ function initFilters() {
     renderGrid();
   });
 
-  // Cat tabs
   document.querySelectorAll('.cat-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       state.category = tab.dataset.cat;
@@ -485,7 +471,7 @@ function updateCatTabs() {
    MODAL EVENTS
    ──────────────────────────────────────────────────────────── */
 function initModal() {
-  const overlay  = document.getElementById('modal-overlay');
+  const overlay = document.getElementById('modal-overlay');
   const closeBtn = document.getElementById('modal-close');
 
   closeBtn?.addEventListener('click', closeModal);
@@ -501,7 +487,6 @@ function initModal() {
    INIT
    ──────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // CHANGE #11: set default sort selector to price-asc
   const sortEl = document.getElementById('filter-sort');
   if (sortEl) sortEl.value = 'price-asc';
 
@@ -511,7 +496,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   renderGrid();
 
-  // Scroll-based header shadow
   window.addEventListener('scroll', () => {
     const header = document.querySelector('.site-header');
     if (header) {
