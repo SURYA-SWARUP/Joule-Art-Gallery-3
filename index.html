@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOULE Wall Paintings | Premium Curated Wall Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SKIP LINK -->
+  <a href="#collection" class="skip-link">Skip to collection</a>
+
+  <!-- ============================================================
+       HEADER / NAVBAR
+  ============================================================ -->
+  <header class="site-header" id="home">
+    <div class="header-inner">
+
+      <!-- LOGO BLOCK -->
+      <a href="#home" class="logo-block" onclick="smoothScrollTo('home')">
+        <div class="logo-container">
+          <img src="https://sambhav-khandelwal.github.io/-SURYA-WD-F2/assets/joule-logo.svg"
+               alt="JOULE logo" class="logo-img" onerror="this.style.display='none'" />
+          <div class="logo-text-wrap">
+            <span class="logo-wordmark">JOULE</span>
+            <span class="logo-subtitle">Curated Wall Paintings</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- HEADER SEARCH BAR -->
+      <div class="header-search-wrap">
+        <input type="text" id="header-search-input" class="header-search-input"
+               placeholder="Search paintings…" aria-label="Search paintings" />
+        <button class="header-search-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- HAMBURGER -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- NAV LINKS — order: Home → Collection → Categories → About → Contact → WhatsApp -->
+      <nav class="main-nav" id="main-nav">
+        <a href="#home"       class="nav-link" onclick="smoothScrollTo('home')">Home</a>
+        <a href="#collection" class="nav-link" onclick="smoothScrollTo('collection')">Collection</a>
+        <a href="#categories" class="nav-link" onclick="smoothScrollTo('categories')">Categories</a>
+        <a href="#about"      class="nav-link" onclick="smoothScrollTo('about')">About</a>
+        <a href="#contact"    class="nav-link" onclick="smoothScrollTo('contact')">Contact</a>
+        <a href="https://wa.me/919065505100?text=Hi%21%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20know%20more."
+           class="nav-link nav-whatsapp" target="_blank" rel="noopener">
+          <img src="assets/images/whatsapp-logo.png" alt="WhatsApp" class="wa-icon-img" />
+          WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero-section" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Premium wall art for modern interiors</p>
+        <!-- CHANGE #9: Updated headline text -->
+        <h1 class="hero-headline">Bring gallery presence to every wall.</h1>
+        <p class="hero-desc">
+          Discover curated paintings across calm Buddha compositions, bold horse artwork, spiritual classics,
+          modern portraits, and statement-ready pieces for homes, offices, and feature walls.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#collection" class="btn btn-primary" onclick="smoothScrollTo('collection')">Explore Collection</a>
+          <a href="https://wa.me/919065505100?text=Hi%21%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20know%20more."
+             class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <img src="assets/images/whatsapp-logo.png" alt="" class="wa-icon-img" />
+            Contact on WhatsApp
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>50+</strong><span>Curated artworks</span></div>
+          <div class="stat"><strong>3</strong><span>Wall-size categories</span></div>
+          <div class="stat"><strong>From ₹1499</strong><span>Premium pricing</span></div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <!-- CHANGE #5: Removed "Featured panoramic pick" label -->
+        <!-- CHANGE #6: Swapped to Leopard on Teal image -->
+        <img
+          src="https://sambhav-khandelwal.github.io/-SURYA-WD-F2/assets/images/Leopard on Teal Textured Wall Painting.jpg"
+          alt="Leopard on Teal Textured Wall Painting"
+          class="hero-painting"
+          loading="eager" />
+        <div class="hero-caption">
+          <h2 class="hero-painting-title">Leopard on Teal Textured Wall Painting</h2>
+          <p class="hero-painting-desc">Bold, artistic, and unforgettable — made for statement walls in living rooms and premium open spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORIES / BROWSE BY WALL SIZE  (id="categories")
+  ============================================================ -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <p class="section-label">Browse by wall size</p>
+      <h2 class="section-title">Choose the right scale before you choose the art.</h2>
+      <p class="section-subtitle">
+        Each painting is available in Small, Office Wall, and Statement Wall variants. Use these curated
+        size categories to browse the collection the way customers actually shop.
+      </p>
+
+      <div class="size-cards">
+
+        <!-- SMALL WALL CARD — CHANGE #8: same bg as Office Wall, label → SMALL WALL -->
+        <div class="size-card">
+          <div class="size-card-price">₹1499</div>
+          <!-- CHANGE #8: heading text → SMALL WALL -->
+          <h3 class="size-card-title">SMALL WALL</h3>
+          <p class="size-card-desc">Best for compact corners, entry nooks, layered walls, and aesthetic shelves.</p>
+          <ul class="size-card-list">
+            <li>Best feel: accent-friendly</li>
+            <li>Suggested size range: up to 32 in</li>
+            <li>Perfect for: bedrooms, corners, galleries</li>
+          </ul>
+          <!-- CHANGE #8: button text → BROWSE SMALL WALL -->
+          <a href="#collection" class="size-card-btn" onclick="filterByCategory('Small')">Browse Small Wall</a>
+        </div>
+
+        <!-- OFFICE WALL CARD -->
+        <div class="size-card">
+          <div class="size-card-price">₹1799</div>
+          <h3 class="size-card-title">OFFICE WALL</h3>
+          <p class="size-card-desc">Balanced proportions curated for desks, console walls, studios, cabins, and workspaces.</p>
+          <ul class="size-card-list">
+            <li>Best feel: professional and polished</li>
+            <li>Suggested size range: 36–48 in</li>
+            <li>Perfect for: offices, study rooms, sideboards</li>
+          </ul>
+          <a href="#collection" class="size-card-btn" onclick="filterByCategory('Office Wall')">Browse Office Wall</a>
+        </div>
+
+        <!-- STATEMENT WALL CARD — CHANGE #1: fixed alignment, CHANGE #8: same bg colour -->
+        <div class="size-card">
+          <div class="size-card-price">₹1999</div>
+          <!-- CHANGE #8: button text → BROWSE STATEMENT WALL -->
+          <h3 class="size-card-title">STATEMENT WALL</h3>
+          <p class="size-card-desc">Designed for bold focal walls behind sofas, main living spaces, and premium open areas.</p>
+          <ul class="size-card-list">
+            <li>Best feel: oversized impact</li>
+            <li>Suggested size range: 48–60 in</li>
+            <li>Perfect for: living rooms, feature walls, lounges</li>
+          </ul>
+          <a href="#collection" class="size-card-btn" onclick="filterByCategory('Statement Wall')">Browse Statement Wall</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COLLECTION SECTION
+  ============================================================ -->
+  <section class="collection-section" id="collection">
+    <div class="container">
+      <p class="section-label">Collection</p>
+      <h2 class="section-title">Premium wall paintings catalogue</h2>
+      <p class="section-subtitle">Filter, sort, quick view, and enquire instantly.</p>
+
+      <!-- CHANGE #4: Filter box is NOT sticky — normal flow element -->
+      <!-- CHANGE #7: Search bar removed from here (moved to header) -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label for="filter-category">Wall fit</label>
+          <select id="filter-category">
+            <option value="">All categories</option>
+            <option value="Small">Small Wall</option>
+            <option value="Office Wall">Office Wall</option>
+            <option value="Statement Wall">Statement Wall</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-theme">Theme</label>
+          <select id="filter-theme">
+            <option value="">All themes</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Horses">Horses</option>
+            <option value="Spiritual">Spiritual</option>
+            <option value="Portrait">Portrait</option>
+            <option value="Landscape">Landscape</option>
+            <option value="Abstract">Abstract</option>
+            <option value="Wildlife">Wildlife</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-sort">Sort by</label>
+          <select id="filter-sort">
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name-az">Name: A–Z</option>
+            <option value="featured">Featured</option>
+          </select>
+        </div>
+        <button class="btn-clear-filters" id="clear-filters">Clear filters</button>
+      </div>
+
+      <!-- CATEGORY TABS -->
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-cat="">All</button>
+        <button class="cat-tab" data-cat="Small">Small Wall</button>
+        <button class="cat-tab" data-cat="Office Wall">Office Wall</button>
+        <button class="cat-tab" data-cat="Statement Wall">Statement Wall</button>
+      </div>
+
+      <!-- PAINTINGS GRID -->
+      <div class="paintings-grid" id="paintings-grid">
+        <p class="loading-msg">Loading collection…</p>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="empty-state" style="display:none;">
+        <h3>No paintings match these filters.</h3>
+        <p>Try another theme, switch category, or clear the filters to explore the full collection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <p class="section-label">About JOULE</p>
+        <h2 class="section-title">Curated artwork that feels premium before it even reaches the wall.</h2>
+        <p class="about-body">
+          JOULE is designed around a simple idea: wall art should not feel random. It should feel chosen.
+          Every piece in this collection is presented with a clean, premium browsing experience, size-led
+          shopping flow, and styling that fits modern Indian homes, offices, and creative spaces.
+        </p>
+        <p class="about-body">
+          From serene Buddha visuals to bold panoramic horse paintings and heritage-inspired spiritual art,
+          the collection is curated to help buyers move from inspiration to enquiry with clarity.
+        </p>
+
+        <!-- CHANGE #2: Pill/badge label above WHY CHOOSE US -->
+        <!-- CHANGE #3: "What makes the experience better" section removed entirely -->
+        <div class="about-feature-block">
+          <span class="section-pill">Our Promise</span>
+          <h3 class="about-subheading">Why choose us</h3>
+          <ul class="about-list">
+            <li>Size-led browsing that feels practical and premium</li>
+            <li>Curated catalogue with modern, aesthetic visual hierarchy</li>
+            <li>Quick WhatsApp-based buying and easy product discovery</li>
+            <li>Responsive experience built for mobile-first users</li>
+          </ul>
+        </div>
+        <!-- "What makes the experience better" block has been REMOVED per change #3 -->
+      </div>
+
+      <div class="about-visual">
+        <img
+          src="https://sambhav-khandelwal.github.io/-SURYA-WD-F2/assets/images/Leopard on Teal Textured Wall Painting.jpg"
+          alt="JOULE curated wall art"
+          class="about-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-inner">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Ready to enquire about a painting?</h2>
+      <p class="section-subtitle">Reach out directly for orders, custom guidance, and collection assistance.</p>
+
+      <div class="contact-cards">
+        <a href="tel:+919065505100" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.9 19.79 19.79 0 01.1 3.28 2 2 0 012.1 1.1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.19a16 16 0 006.9 6.9l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>+91 9065505100</span>
+        </a>
+
+        <!-- CHANGE #15: Updated email to namit.joule@gmail.com -->
+        <a href="mailto:namit.joule@gmail.com" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span>namit.joule@gmail.com</span>
+        </a>
+
+        <a href="https://wa.me/919065505100?text=Hi%21%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20know%20more."
+           class="contact-card contact-wa" target="_blank" rel="noopener">
+          <img src="assets/images/whatsapp-logo.png" alt="WhatsApp" class="wa-icon-img" />
+          <span>Chat on WhatsApp</span>
+        </a>
+
+        <!-- CHANGE #15: Shop location added -->
+        <div class="contact-card contact-location">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Near Loreto Convent, Doranda,<br>Ranchi, Jharkhand – 834001</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo-block" onclick="smoothScrollTo('home')">
+          <div class="logo-container footer-logo-container">
+            <div class="logo-text-wrap">
+              <span class="logo-wordmark">JOULE</span>
+              <span class="logo-subtitle">Curated Wall Paintings</span>
+            </div>
+          </div>
+        </a>
+        <p class="footer-tagline">Premium wall paintings for modern homes, offices, and statement interiors.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#collection" onclick="smoothScrollTo('collection')">Collection</a>
+        <a href="#categories" onclick="smoothScrollTo('categories')">Categories</a>
+        <a href="#about"      onclick="smoothScrollTo('about')">About</a>
+        <a href="#contact"    onclick="smoothScrollTo('contact')">Contact</a>
+      </div>
+
+      <div class="footer-contact">
+        <a href="tel:+919065505100">+91 9065505100</a>
+        <!-- CHANGE #15: Updated email -->
+        <a href="mailto:namit.joule@gmail.com">namit.joule@gmail.com</a>
+        <!-- CHANGE #15: Shop location in footer -->
+        <p class="footer-address">
+          📍 Near Loreto Convent, Doranda,<br>Ranchi, Jharkhand – 834001
+        </p>
+        <a href="https://wa.me/919065505100?text=Hi%21%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20know%20more."
+           class="footer-wa" target="_blank" rel="noopener" title="Chat on WhatsApp">
+          <img src="assets/images/whatsapp-logo.png" alt="WhatsApp" class="wa-icon-img wa-icon-lg" />
+          Chat
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 JOULE Wall Paintings. All rights reserved.</p>
+  </footer>
+
+  <!-- ============================================================
+       QUICK VIEW MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <img src="" alt="" id="modal-img" class="modal-img" />
+      <div class="modal-info">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <p class="modal-meta" id="modal-meta"></p>
+        <p class="modal-price" id="modal-price"></p>
+        <div class="modal-actions">
+          <a href="#" id="modal-wa" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <img src="assets/images/whatsapp-logo.png" alt="" class="wa-icon-img" />
+            Enquire on WhatsApp
+          </a>
+          <!-- CHANGE #15: Updated modal email -->
+          <a href="mailto:namit.joule@gmail.com" class="btn btn-outline">Email Us</a>
+        </div>
+        <p class="modal-contact"><strong>Phone:</strong> <a href="tel:+919065505100">+91 9065505100</a></p>
+        <p class="modal-contact"><strong>Email:</strong> <a href="mailto:namit.joule@gmail.com">namit.joule@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/919065505100?text=Hi%21%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20know%20more."
+     class="floating-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img src="assets/images/whatsapp-logo.png" alt="WhatsApp" class="wa-icon-img wa-icon-float" />
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
